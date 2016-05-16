@@ -1,4 +1,13 @@
 language: java
 jdk:
-  - oraclejdk8
+- oraclejdk8
 script: gradle distZip
+deploy:
+  provider: releases
+  api_key:
+    secure: b+oneMMkBlj/nBGj99n6DuJaYTdN9lMjmpjKWloNQGRrwAjBMysiMZML/+zlCR30aneelqhwQB9/P3vP0x5IW7ZuyCsBhTjMUyn3F0+JDCgGC2g9l67BdkSdMBfmjjg6m2Kpp/anOmurV+pPoHJx2x0161ZRR1N6jzjtmX3ABNw0DTk1pPpQpxSNGaTTzimrdUZ6wIyl2Fqglcc367OOuYX/uO7/jb7MeQKKoK7d1gEtjQF3Uj46hTsm6aId3IFUes31mfOErctMH3CtEWAtw5pHDQbDhoTY7jkx/BEN74AV+yNxKqGWx41zl3NbDtMRihDTDJCwJ6Pc+9Q//+Z/QfOszpvTj1k3Wr7bGwkpP0W3SCOel710SA91bfh/N9dwu7HclVhlitBhwuwRn/bQCzdSb9z1ucgiA8Ix4yHFjuLJI0ZwYkKKQoDl/tt1E9uz33hIBUwguzWZiRsRUO42/KE5V2w88d0cjbznF0H7mPhMiOrmXiRGZjAU9OC/93Vj2q9dXXzdJv07nEM9kMpclGFvJQ+rk8lwT8S6vVTiK2NhJhpH4UVUz0PDki0h26KFKFmu49/18Z0Ho109zXVnhAbnHiirf+nRC5iINQnY7hz1EUMnVKSCPtTOAPZVCPTDkkD1ghqgZV2Jik3vLD08Ngj+ENsvjbeGXsaFwgiJ2qI=
+  file: router/build/distributions/thecore-router-2.2.0.zip
+  skip_cleanup: true
+  on:
+    repo: tjad/the-core-java
+    branch: tci
